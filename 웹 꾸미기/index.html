@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시험2</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @font-face {
+            font-family: 'GangwonEduHyeonokT_OTFMediumA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduHyeonokT_OTFMediumA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <!-- <script src="http://maps.google.com/maps/api/js?key=자기가발급한키를입력&region=kr"></script> -->
+    <script src="http://maps.google.com/maps/api/js?key=AIzaSyAVPkpd1jhhl05WKDp6tSSr_ov52qKC9Ho&region=kr"></script>
+    <script src="./map.js"></script>
+</head>
+<body>
+    <header id="nav">
+        <div id="head1">
+        <div id="logo"><img src="./img/logo.svg" alt="로고"></div>
+        <nav id="menu1">
+            <dl>
+                <dd>Personal</dd>
+                <dd>Open source</dd>
+                <dd>Business</dd>
+                <dd>Explore</dd>
+            </dl>
+        </nav>
+        </div>
+
+        <div id="head2">
+        <nav id="menu2">
+            <dl>
+                <dd>Pricing</dd>
+                <dd>Blog</dd>
+                <dd>Support</dd>
+            </dl>
+        </nav>
+        <div class="search">
+            <input type="text" id="search" placeholder="Search Github">
+        </div>
+        <div id="headBtn">
+            <button id="headBtn1">Sign in</button>
+            <button id="headBtn2">Sign up</button>
+        </div>
+
+        <div id="menuimg"></div>
+    </header>
+
+    <div id="bg">
+        <div id="bg1"><h1>How people build software</h1>
+        <p>Millions of developers user GitHub to build personal projects, support their businesses, and work together on open source technologies.</p></div>
+        <div id="bg2">
+            <p class="bgInput"><input type="text" placeholder="Pick a username"></p>
+            <p class="bgInput"><input type="text" placeholder="Your email address"></p>
+            <p class="bgInput"><input type="text" placeholder="Create a password"></p>
+            <p>User at least one letter, one numeral, and seven characters.</p>
+            <button id="bgBtn">Sign up for GitHub</button>
+            <p>By clicking 'Sign up for GitHub', you agree to our terms of service and privacy policy. We'ss occassionally send you account related emails.</p>
+        </div>
+    </div>
+    <div id="container">
+        <div id="div1">
+            <h2>Welcome home, developers</h2>
+            <p>GitHub foster a fast, flexible, and collaborative developement process that lets you work on your own or with other.</p>
+            <div id="youtube"><iframe width="560" height="315" src="https://www.youtube.com/embed/afvT1c1ii0c?si=xsWxirmtFgLX8YeK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+        
+
+        <section id="intro">
+            <div class="img">
+                <p><img src="./img/feature-tile__build.png" alt=""></p>
+                <p class="imgtitle">For everything you build</p>
+                <p class="imgcontent">Host and manage your code on GitHub. you can keep your work private or share it with the world.</p>
+            </div>
+            <div class="img">
+                <p><img src="./img/feature-tile__work.png" alt=""></p>
+                <p class="imgtitle">A better way to work</p>
+                <p class="imgcontent">From hobbyists to professionals, GitHub helps developers simplify the way they build software.</p>
+            </div>
+            <div class="img">
+                <p><img src="./img/feature-tile__projects.png" alt=""></p>
+                <p class="imgtitle">Millions of projects</p>
+                <p class="imgcontent">GitHub is home to millions of open source projects. Try one out or get inspired to create your own.</p>
+            </div>
+            <div class="img">
+                <p><img src="./img/feature-tile__platform.png" alt=""></p>
+                <p class="imgtitle">One platform, from start to finish</p>
+                <p class="imgcontent">With hundreds of integrations, GitHub is flexible enough to be at the center of your development process.</p>
+            </div>
+        </section>
+        
+        <div id="location">
+            <h2>where is GitHub?</h2>
+            <p>GitHub is where people build software. More than 18 milion people use GitHub to discover, fork, and contribute to over 48 million projects.</p>
+            <div id="map"></div>
+            
+            
+        <div id="purchase">
+            <button>sign up for GitHub</button>
+            <p>Public projects are always free. Work together across unlimited private repositories for $7/month.</p>
+        </div>
+        </div>
+
+        <footer>
+            <p id="fp1">@ 2016 GitHub. Inc. <font color="blue">Terms Privacy Security Status Help</font></p>
+            <p id="fp2"><img src="./img/logo_footer.svg" alt="github"></p>
+            <p style="color: blue;" id="fp3">Contact GitHub API Training Shop Blog About</p>
+        </footer>
+    </div>
+
+
+    <script type="text/javascript">
+        var map;
+        // 지도 출력
+        function initMap(){
+            // 위치데이터 경도, 위도로 구성된 jso 파일은 항상 이런식으로 구성되어있다.
+            var ll = {lat: 37.500624, lng: 127.036268};
+            map = new google.maps.Map(
+                    document.getElementById("map"),
+                    {zoom: 17, center: ll}
+                    );
+            new google.maps.Marker(
+                {position: ll,
+                    map: map,
+                    label: "현재 위치"}        
+            );
+        }
+        initMap(); // 맵 생성
+    </script>
+</body>
+</html>
